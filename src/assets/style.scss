@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #FFFFFF;
+  --main: #000000;
+  --second: #3a96d7;
+}
+
+.rb-button {
+  padding: 10px 20px;
+  color: var(--background);
+  background: var(--second);
+  border: none;
+  border-radius: 5px;
+
+  &:hover,&:focus,&:active {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}

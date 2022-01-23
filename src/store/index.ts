@@ -1,43 +1,28 @@
 import { createStore } from 'vuex'
 
 const state = {
-    auth: false
+    user: null,
+    beer: null
 }
 
 const mutations = {
-    login (state: any) {
-        state.auth = true
+    getUser (state: any, value: object) {
+        state.user = value
     },
-    logout (state: any) {
-        state.auth = false
-    }
+    getBeer (state: any, value: object) {
+        state.beer = value
+    },
 }
 
-// const actions = {
-//     increment: ({ commit }) => commit('increment'),
-//     decrement: ({ commit }) => commit('decrement'),
-//     incrementIfOdd ({ commit, state }) {
-//         if ((state.count + 1) % 2 === 0) {
-//             commit('increment')
-//         }
-//     },
-//     incrementAsync ({ commit }) {
-//         return new Promise((resolve, reject) => {
-//             setTimeout(() => {
-//                 commit('increment')
-//                 resolve()
-//             }, 1000)
-//         })
-//     }
-// }
-//
-// const getters = {
-//     evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
-// }
+const actions = {
+    // @ts-ignore
+    getUser: ({ commit }, value) => commit('getUser', value),
+    // @ts-ignore
+    getBeer: ({ commit }, value) => commit('getBeer', value)
+}
 
 export default createStore({
     state,
-    // getters,
-    // actions,
+    actions,
     mutations
 })
