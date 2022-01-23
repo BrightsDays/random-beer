@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import { createStore, Commit } from 'vuex'
 
 const state = {
     user: null,
@@ -15,14 +15,12 @@ const mutations = {
 }
 
 const actions = {
-    // @ts-ignore
-    getUser: ({ commit }, value) => commit('getUser', value),
-    // @ts-ignore
-    getBeer: ({ commit }, value) => commit('getBeer', value)
+    getUser: ({ commit }: { commit: Commit }, value: string) => commit('getUser', value),
+    getBeer: ({ commit }: { commit: Commit }, value: string) => commit('getBeer', value)
 }
 
 export default createStore({
     state,
-    actions,
-    mutations
+    mutations,
+    actions
 })
