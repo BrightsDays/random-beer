@@ -11,7 +11,7 @@ const mutations = {
     },
     getBeer (state: any, value: object) {
         state.beer = value
-    },
+    }
 }
 
 const actions = {

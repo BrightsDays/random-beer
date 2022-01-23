@@ -15,8 +15,8 @@
 </template>
 
 <script lang="ts">
-import {useStore} from "vuex";
-import {computed} from "vue";
+import {useStore} from 'vuex'
+import {computed} from 'vue'
 
 export default {
   setup () {
@@ -27,7 +27,7 @@ export default {
       userName: computed(() => {
         return store.state.user?.first_name && store.state.user?.last_name ?
           store.state.user.first_name + ' ' + store.state.user.last_name :
-          'Default User'
+          'Пользователь'
       })
     }
   }
@@ -49,24 +49,18 @@ export default {
     align-items: center;
   }
 
+  &__user {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
   &__avatar {
     width: 50px;
     height: 50px;
-    margin-right: 20px;
     object-fit: cover;
     border: 2px solid var(--second);
     border-radius: 50%;
   }
-}
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
 }
 </style>
